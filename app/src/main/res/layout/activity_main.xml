@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/enter_value"
+        style="@style/Widget.UnitConverter.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_value"
+        app:layout_constraintBottom_toBottomOf="@+id/input_enter_value"
+        app:layout_constraintEnd_toEndOf="@+id/select_input_unit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/input_enter_value"
+        app:layout_constraintVertical_bias="0.615" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_enter_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/enter_value"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_enter_value_edit_text"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:hint="@string/input_value"
+            android:inputType="numberDecimal"
+            android:textColorHint="#9E9E9E"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/select_input_unit"
+        style="@style/Widget.UnitConverter.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_unit"
+        app:layout_constraintBottom_toBottomOf="@+id/input_unit"
+        app:layout_constraintEnd_toEndOf="@+id/to"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/input_unit" />
+
+    <RadioGroup
+        android:id="@+id/input_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/input_enter_value"
+        app:layout_constraintStart_toStartOf="@+id/input_enter_value"
+        app:layout_constraintTop_toBottomOf="@+id/input_enter_value">
+
+        <RadioButton
+            android:id="@+id/input_mm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:checked="true"
+            android:text="@string/mm" />
+
+        <RadioButton
+            android:id="@+id/input_cm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/cm"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <RadioButton
+            android:id="@+id/input_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/m" />
+
+        <RadioButton
+            android:id="@+id/input_km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/km" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/to"
+        style="@style/Widget.UnitConverter.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        app:layout_constraintBottom_toBottomOf="@+id/convert_unit"
+        app:layout_constraintEnd_toEndOf="@+id/select_input_unit"
+        app:layout_constraintStart_toStartOf="@+id/select_input_unit"
+        app:layout_constraintTop_toTopOf="@+id/convert_unit" />
+
+    <RadioGroup
+        android:id="@+id/convert_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/input_enter_value"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/input_enter_value"
+        app:layout_constraintTop_toBottomOf="@+id/input_unit">
+
+        <RadioButton
+            android:id="@+id/convert_input_mm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:checked="true"
+            android:text="mm" />
+
+        <RadioButton
+            android:id="@+id/convert_input_cm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="cm" />
+
+        <RadioButton
+            android:id="@+id/convert_input_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="m" />
+
+        <RadioButton
+            android:id="@+id/convert_input_km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/km" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/convert_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="CONVERT"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/convert_unit"
+        app:layout_constraintStart_toStartOf="@+id/convert_unit"
+        app:layout_constraintTop_toBottomOf="@+id/convert_unit"
+        tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/convert_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Converting 0mm to 0mm is 0mm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convert_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
